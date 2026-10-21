@@ -1,0 +1,7 @@
+node_modules/
+__pycache__/
+*.mp4
+!examples/*.mp4
+board/
+kit/
+.DS_Store
