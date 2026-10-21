@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<!-- launch-motion · CATALOG (9:16). Shows every helper and transition, with demo labels (.lab).
+     A real video uses 3–4 transition types and zoom at 1–2 moments only.
+     Run inside a project made by setup.sh + brand.py (needs kit/). Cards are pure HTML, no images. -->
+<link rel="stylesheet" href="kit/theme.css">
+<style>
+.mid{top:760px}
+.kpi{padding:30px 34px}.kpi .l{font:700 24px var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kpi .v{font:800 64px var(--font-body);color:var(--fg);margin-top:10px;letter-spacing:-.02em}.kpi .d{font:600 22px var(--font-body);color:#16a34a;margin-top:6px}
+.chart{padding:34px}.chart .l{font:700 24px var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.bars{position:absolute;left:34px;right:34px;bottom:34px;height:250px;display:flex;align-items:flex-end;gap:16px}
+.bars i{flex:1;background:color-mix(in srgb,var(--fg) 14%,var(--surface));border-radius:8px 8px 0 0}.bars i:last-child{background:var(--accent)}
+.lab{position:absolute;left:0;right:0;top:1640px;text-align:center;z-index:99999;visibility:hidden}
+.lab span{display:inline-block;padding:16px 30px;border-radius:40px;background:rgba(0,0,0,.72);color:#fff;font:700 30px var(--font-body);letter-spacing:.04em}
+</style></head><body><div id="stage">
+
+<div class="sc light" id="A"><div class="kick" id="kA">New · Insights</div>
+ <div class="title" id="tA"><span class="ln"><span class="base">what you spent and</span></span><span class="ln"><span class="em">what came back</span></span></div>
+ <div class="card kpi" style="left:90px;top:560px;width:840px;height:200px"><div class="l">Revenue</div><div class="v">$122,747</div><div class="d">▲ 17.1% vs last month</div></div>
+ <div class="card kpi" style="left:90px;top:784px;width:840px;height:200px"><div class="l">New customers</div><div class="v">853</div><div class="d">▲ 51.3% vs last month</div></div>
+ <div class="card kpi" id="roasA" style="left:90px;top:1008px;width:840px;height:200px"><div class="l">Return on ads</div><div class="v">4.8x</div><div class="d">▲ 0.6 vs last month</div></div></div>
+
+<div class="sc dark" id="B"><div class="title mid" id="tB"><span class="ln"><span class="base">everything that matters</span></span><span class="ln"><span class="em">in one place</span><span class="em dot">.</span></span></div></div>
+
+<div class="sc light" id="C"><div class="kick">This year</div>
+ <div class="title" id="tC"><span class="ln"><span class="base">day by day</span></span><span class="ln"><span class="em">no spreadsheets</span></span></div>
+ <div class="card chart" id="cC" style="left:90px;top:600px;width:840px;height:460px"><div class="l">Orders per month</div>
+  <div class="bars"><i style="height:38%"></i><i style="height:46%"></i><i style="height:42%"></i><i style="height:58%"></i><i style="height:64%"></i><i style="height:61%"></i><i style="height:78%"></i><i style="height:96%"></i></div></div></div>
+
+<div class="sc dark" id="D"><div class="title mid" id="tD"><span class="ln"><span class="base">and when</span></span><span class="ln"><span class="em">the month closes</span><span class="em dot">?</span></span></div></div>
+
+<div class="sc light punch" id="E"><div class="wd">Ready<span class="dot">.</span></div></div>
+
+<div class="sc dark" id="F"><div class="kick">One screen</div>
+ <div class="wlist" id="list" style="top:620px"><div class="track"><div class="wi">Revenue</div><div class="wi">Customers</div><div class="wi">Ads</div><div class="wi">Retention</div></div></div></div>
+
+<div class="sc light" id="G"><div class="kick">Retention</div>
+ <div class="title" id="tG"><span class="ln"><span class="base">who stays and</span></span><span class="ln"><span class="em">what it's worth</span></span></div>
+ <div class="card kpi" style="left:90px;top:620px;width:405px;height:300px"><div class="l">Churn</div><div class="v">2.1%</div><div class="d">▼ 0.4 pts</div></div>
+ <div class="card kpi" id="ltvG" style="left:525px;top:620px;width:405px;height:300px;background:var(--dark)"><div class="l" style="color:var(--dark-fg);opacity:.7">LTV</div><div class="v" style="color:var(--dark-fg)">$1,277</div></div></div>
+
+<div class="sc dark" id="H"><div class="kick" style="top:600px">Average LTV</div><div class="gnum" data-n="$1,277" style="position:absolute;left:90px;top:660px"></div></div>
+
+<div class="sc light" id="I"><div class="title mid" id="tI"><span class="ln"><span class="base">all your numbers</span></span><span class="ln"><span class="em">at a glance</span><span class="em dot">.</span></span></div></div>
+
+<div class="sc dark" id="J"><div class="title mid" id="tJ"><span class="ln"><span class="base">no waiting for</span></span><span class="ln"><span class="em">the report</span><span class="em dot">.</span></span></div></div>
+
+<div class="sc dark outro" id="K"><img class="logo" src="kit/logo-dark.svg"><div class="tag">northwind.example</div></div>
+</div>
+<script src="kit/gsap.min.js"></script><script src="kit/motion.js"></script><script src="kit/format.js"></script><script>
+M.splitWords(); M.splitLetters(); M.buildRoll(); const tl = M.tl;
+gsap.set('.sc:not(#A)', { autoAlpha: 0 });
+function lab(txt, t, d = 1.9) { const e = document.createElement('div'); e.className = 'lab'; e.innerHTML = '<span>' + txt + '</span>'; document.getElementById('stage').appendChild(e); tl.set(e, { autoAlpha: 1 }, t).set(e, { autoAlpha: 0 }, t + d); }
+let t = 0;
+M.kick('#kA', .2); M.title('#tA', .3); M.winOpen('#A .card', .9, .2);
+lab('01 · camera punch-in', 2.4, 2.2); M.focus('#A', '#roasA', 2.5, 1.9, 1, .2, .5); M.unfocus('#A', 3.9);
+t = 5.0; lab('02 · zoom in', t); M.T.zoomIn('#A', '#B', t, .8, '50% 70%'); M.title('#tB', t + .45);
+t = 7.4; lab('03 · whip', t); M.T.whip('#B', '#C', t, 'left'); M.title('#tC', t + .35); M.winOpen('#cC', t + .5); M.bars('#cC .bars i', t + .9);
+t = 10.2; lab('04 · stack', t); M.T.stack('#C', '#D', t); M.title('#tD', t + .55);
+t = 12.6; lab('05 · sweep', t); M.T.sweep('#D', '#E', t, 'accent', 'left'); M.letters('#E', t + .55);
+t = 15.0; lab('06 · blinds', t); M.T.blinds('#E', '#F', t, 6, 'dark'); const e = M.wordList('#list', t + .7, .42);
+t = Math.max(e + .2, t + 2.6); lab('07 · shutter', t); M.T.shutter('#F', '#G', t, 'h', 'dark'); M.title('#tG', t + .45); M.winOpen('#G .card', t + .6, .18);
+t += 2.8; lab('08 · expand from card', t); M.T.expandFrom('#G', '#H', t, '#ltvG'); M.roll('#H', t + .7);
+t += 3.0; lab('09 · through the word', t); M.T.throughWord('#H', '#I', t, 'LTV'); M.title('#tI', t + 1.05);
+t += 3.0; lab('10 · zoom out', t); M.T.zoomOut('#I', '#J', t); M.title('#tJ', t + .45);
+t += 2.4; lab('11 · blur + outro', t); M.T.blur('#J', '#K', t); M.outro('#K', t + .3);
+window.DUR = t + 3;
+</script></body></html>

@@ -1,0 +1,27 @@
+{
+  "name": "Northwind",
+  "locale": "en-US",
+  "colors": {
+    "bg": "#F3F1EC", "fg": "#1C1B22",
+    "dark": "#1C1B22", "dark_fg": "#F3F1EC",
+    "accent": "#FF5A36", "accent_fg": "#FFFFFF", "accent_on_dark": "#FF7A5C",
+    "dark_gradient": null,
+    "surface": "#FFFFFF", "muted": "#6B6A73"
+  },
+  "accent_use": "details",
+  "fonts": {
+    "display": { "fontsource": "fraunces", "weights": [400, 900] },
+    "body": { "fontsource": "inter", "weights": [400, 600, 700, 800, 900] }
+  },
+  "headline": {
+    "base": { "weight": 400, "italic": true },
+    "em": { "weight": 900, "italic": false },
+    "case": "none", "tracking": "-0.01em", "line": 1.08
+  },
+  "radius": 20,
+  "logo": { "light": "logo-dark.svg", "dark": "logo-light.svg" },
+  "outro": { "bg": "dark", "tagline": "Ship it.", "url": "northwind.example" },
+  "motion": { "energy": "balanced" },
+  "voice": "Confident, plain words, short sentences. Talks to small business owners as peers.",
+  "avoid": ["exclamation marks", "jargon like 'synergy'", "stock-photo people"]
+}
